@@ -6,24 +6,17 @@ var hour = $(".hour");
 
 var textArea = $(".textarea");
 
-if (hour.eq(0).text() === today.format("hA")) {
-    textArea.eq(0).addClass("present");
-} else if (hour.eq(0).text() < today.format("hA")) {
-    textArea.eq(0).addClass("past");
-}  else {
-    textArea.eq(0).addClass("past");
-}
 
-
-for (var i = 1; i < hour.length; i++) {
-if (hour.eq(i).text() === today.format("hA")) {
+for (var i = 0; i < hour.length; i++) {
+if (+hour.eq(i).attr("data-index") === +today.format("k")) {
     textArea.eq(i).addClass("present");
-} else if (hour.eq(i).text() < today.format("hA")) {
+} else if (+hour.eq(i).attr("data-index") < +today.format("k")) {
     textArea.eq(i).addClass("past");
 }  else {
     textArea.eq(i).addClass("future");
 }
 }
+
 
 var storedInitialEvents = JSON.parse(localStorage.getItem("initialEvents"));
 
@@ -38,7 +31,6 @@ for (var i = 0; i < textArea.length; i ++) {
     }
 
 }
-
 
 
 var eventsArray = [];
