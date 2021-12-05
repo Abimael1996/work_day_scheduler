@@ -70,3 +70,8 @@ textarea {
   color: #000000;
 }
 
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 720px;
+  }
+}
