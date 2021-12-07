@@ -70,6 +70,15 @@ textarea {
   color: #000000;
 }
 
+@media screen and (max-width: 575px) {
+  .container {
+    max-width: 540px;
+    width: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
 @media screen and (min-width: 576px) {
   .container {
     max-width: 720px;
@@ -77,11 +86,8 @@ textarea {
 }
 
 
-@media screen and (max-width: 575px) {
+@media screen and (min-width: 768px) {
   .container {
-    max-width: 540px;
-    width: auto;
-    margin-left: 15px;
-    margin-right: 15px;
+    max-width: 1200px;
   }
 }
