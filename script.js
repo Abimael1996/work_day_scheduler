@@ -7,9 +7,9 @@ var hour = $(".hour");
 var textArea = $(".textarea");
 
 for (var i = 0; i < hour.length; i++) {
-if (+hour.eq(i).attr("data-index") === +today.format("k")) {
+if (+hour.eq(i).attr("data-index") === +today.format("H")) {
     textArea.eq(i).addClass("present");
-} else if (+hour.eq(i).attr("data-index") < +today.format("k")) {
+} else if (+hour.eq(i).attr("data-index") < +today.format("H")) {
     textArea.eq(i).addClass("past");
 }  else {
     textArea.eq(i).addClass("future");
